@@ -1,0 +1,28 @@
+<nav>
+  <a class="nav-link" href="#/projects">Go Back</a>
+</nav>
+
+<div class = "jumbotron jumbotron-fluiod">
+  <div class="panel panel-default" ng-init="getProject()">
+
+    <div class="panel-heading">
+      <h3 class="panel-title"><strong>Project Name: </strong>{{project.ProjectName}}</h3>
+    </div>
+
+    <div class="panel-body">
+    <section class = "container">
+      <div class = "well text-center">
+        <div class="col-md-5"><strong>Project ID: </strong>{{project.ProjectID}}</div>
+        <div class="col-md-5"><strong>Project Name: </strong>{{project.ProjectName}}</div>
+      </div>
+      </section>
+
+    <section class = "container">
+      <h5> <strong>Subjects Enrolled: </strong></h5>
+      <div ng-repeat="subject in project.SubjectsID">
+        <div class = "nav nav-pills col-md-2" type="button" class = "btn btn-info"><a href ="#/{{project['ProjectID']}}/{{subject}}"><strong>{{subject}}</strong></a></div>
+      </div>
+    </section>
+
+    </div>
+  </div>

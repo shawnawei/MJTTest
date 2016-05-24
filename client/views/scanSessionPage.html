@@ -1,0 +1,74 @@
+<style>
+	ul#scanList li{
+		display: inline;
+	}
+
+</style>
+
+<nav>
+  <a ng-init="getScanSession()" class="nav-link" href="#/subjects/{{scanSession.SubjectID}}">Go Back</a>
+</nav>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><strong>Subject ID: </strong>{{scanSession['SubjectID']}} - {{scanSession['SubjectIDinProject']}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div ng-repeat="sessionID in scanSession.ScanSessions">
+        
+
+        <div class="panel panel-info" >
+      <div class="panel-heading" role="tab" id="heading-{{$index}}"> 
+        <h4 class="panel-title"> 
+        <a class="collapsed" role="button" data-toggle="collapse" data-target="#collapse-{{$index}}" aria-expanded="false" aria-controls="collapse-{{$index}}"><strong>{{sessionID['SessionID']}}</strong></a>  
+        </h4> </div>
+
+        <div id="collapse-{{$index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{$index}}"> 
+
+
+         <div class="panel-body">
+          <ul>
+            <li><strong>Participant Age: </strong>{{sessionID['ParticipantAge']}}</li>
+            <div><li><strong>MEG Scans: </strong>
+            <p>
+            <ul id="scanList" class="nav nav-pills">
+              	<li ng-repeat="MEGScan in sessionID.MEGScans" role = "presentation"><a data-toggle = "collapse" aria-expanded ="false" aria-controls = "/{{project['ProjectID']}}/{{project['SubjectIDinProject']}}">{{MEGScan.ScanName}}</a></li>
+
+            </ul>
+            </p>
+            </li></div>
+
+
+           <div> <li><strong>MRI Scans: </strong>
+           <p>
+            	<ul id= "scanList" class="nav nav-pills">
+              	<li  ng-repeat="MRIScan in sessionID.MRIScans" role = "presentation"><a data-toggle = "collapse" aria-expanded ="false" aria-controls = "/{{project['ProjectID']}}/{{project['SubjectIDinProject']}}">{{MRIScan.ScanName}}</a></li>
+           		</ul>
+           	</p>
+            </li></div>
+            
+
+
+            <div><li><strong>Clinical Test Results: </strong>
+            <p>
+            	<ul>
+            	<li>IQ Score: {{sessionID.TestResults.IQScore}}</li>
+            	<li>ADHD Scale: {{sessionID.TestResults.ADHDScale}}</li>
+            	</ul>
+            </p>
+            </li></div>
+
+            
+          </ul>
+         </div> 
+        </div>
+      </div>
+
+
+
+
+      </div>
+    </div>
+   </div>
+ </div>

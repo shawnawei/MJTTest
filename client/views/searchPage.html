@@ -1,0 +1,42 @@
+<div class = "jumbotron" ng-init = "getSearchPage()">
+      <!-- search nav tabs by project, subject, MEG, MRI-->
+       <!-- Nav tabs -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#searchSubject" role="tab">Subject</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#searchProject" role="tab">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#searchMRI" role="tab">MRI</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#searchMEG" role="tab">MEG</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane active" id="subjectSearch" role="tabpanel">...</div>
+          <div class="tab-pane" id="projectSearch" role="tabpanel">...</div>
+          <div class="tab-pane" id="MRISearch" role="tabpanel">...</div>
+          <div class="tab-pane" id="MEGSearch" role="tabpanel">...</div>
+        </div>
+
+        <div class = "container">
+            <form class = "form-inline">
+                <div class="form-group">
+                    <label for="project name">Project Name</label>
+                    <input type="text" class="form-control" >
+                </div>
+
+                <div class="form-group">
+                    <label for="subject enrolled">Subject Enrolled</label>
+                    <input type="text" class="form-control"  placeholder="">
+                </div>
+              <button type="submit" class="btn btn-default">Find</button>
+            </form>
+
+        </div>
+    </div>
